@@ -2,8 +2,8 @@
 
 use App\GraphQL\Query\TaskQuery;
 use App\GraphQL\Type\TaskType;
-
-//use App\GraphQL\Mutation\NewTaskMutation;
+use App\GraphQL\Mutation\UpdateTaskStatusMutation;
+use App\GraphQL\Mutation\NewTaskMutation;
 
 return [
 // The prefix for routes
@@ -95,7 +95,8 @@ return [
                 'tasks' => TaskQuery::class,
             ],
             'mutation' => [
-                'newTask' => App\GraphQL\Mutation\NewTaskMutation::class,
+                'newTask' => NewTaskMutation::class,
+                'updateTaskStatus' => UpdateTaskStatusMutation::class,
             ],
             'middleware' => [],
             'method' => ['get', 'post'],
